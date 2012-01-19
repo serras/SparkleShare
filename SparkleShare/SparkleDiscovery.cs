@@ -13,13 +13,28 @@ namespace SparkleShare {
 		}
 		
 		string Name {
+			get;
+		}
+		
+		bool SupportsCreation {
+			get;	
+		}
+			
+		bool SupportsKeyUploading {
 			get;	
 		}
 		
-		bool SupportsCreation();
-		bool SupportsKeyUploading();
-		
 		T Create(string address, string user, string password);
+		
+	}
+	
+	public static class SparkleDiscoveryServers {
+		
+		SparkleDiscoveryServer<SparkleDiscovery>[] AvailableServers {
+			get {
+				return new SparkleDiscoveryServer<SparkleDiscovery>[0];
+			}
+		}
 		
 	}
 	

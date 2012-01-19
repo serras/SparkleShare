@@ -83,5 +83,6 @@
     <Compile Include="SparkleOptions.cs" />
     <Compile Include="SparkleInvite.cs" />
     <Compile Include="SparkleDiscovery.cs" />
+    <Compile Include="SparkleDiscoveryGithub.cs" />
   </ItemGroup>
 </Project>

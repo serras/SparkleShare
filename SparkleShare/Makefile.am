@@ -20,6 +20,7 @@ SOURCES =  \
 	SparkleController.cs \
 	SparkleControllerBase.cs \
 	SparkleDiscovery.cs \
+	SparkleDiscoveryGithub.cs \
 	SparkleEntry.cs \
 	SparkleEventLog.cs \
 	SparkleEventLogController.cs \
