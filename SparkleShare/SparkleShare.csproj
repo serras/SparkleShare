@@ -43,6 +43,18 @@
       <Private>False</Private>
       <Package>notify-sharp</Package>
     </Reference>
+    <Reference Include="GithubSharp.Core">
+      <HintPath>..\bin\GithubSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.AuthProviders.UserPasswordAuthProvider">
+      <HintPath>..\bin\GithubSharp.Plugins.AuthProviders.UserPasswordAuthProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.CacheProviders.ApplicationCacher">
+      <HintPath>..\bin\GithubSharp.Plugins.CacheProviders.ApplicationCacher.dll</HintPath>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.LogProviders.SimpleLogProvider">
+      <HintPath>..\bin\GithubSharp.Plugins.LogProviders.SimpleLogProvider.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

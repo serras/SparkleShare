@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace SparkleShare {
 	
 	public interface SparkleDiscoveryServer <T> where T : SparkleDiscovery {
@@ -28,9 +31,17 @@ namespace SparkleShare {
 		
 	}
 	
+	public class SparkleDiscoveryException : Exception {
+		
+		public SparkleDiscoveryException() : base() { }
+		public SparkleDiscoveryException(string msg) : base(msg) { }
+		public SparkleDiscoveryException(string msg, Exception inner) : base(msg, inner) { }
+		
+	}
+	
 	public static class SparkleDiscoveryServers {
 		
-		SparkleDiscoveryServer<SparkleDiscovery>[] AvailableServers {
+		public static SparkleDiscoveryServer<SparkleDiscovery>[] AvailableServers {
 			get {
 				return new SparkleDiscoveryServer<SparkleDiscovery>[0];
 			}
@@ -40,18 +51,18 @@ namespace SparkleShare {
 	
 	public abstract class SparkleDiscovery {
 		
-		SparkleDiscoveryServer server;
+		SparkleDiscoveryServer <SparkleDiscovery> server;
 		string address;
 		string user;
 		string password;
 		
-		public abstract List<SparkleDiscoveryRepo> ListRepositories();
+		public abstract IList<SparkleDiscoveryRepo> ListRepositories();
 		
-		public SparkleDiscoveryRepo Create(string name) {
+		public virtual SparkleDiscoveryRepo Create(string name, string info) {
 			throw new NotImplementedException();	
 		}
 		
-		public bool UploadKey(string path) {
+		public virtual bool UploadKey(string key) {
 			throw new NotImplementedException();
 		}
 		

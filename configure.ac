@@ -46,6 +46,15 @@ SHAMROCK_CHECK_MONO_4_0_GAC_ASSEMBLIES([
     System
     System.Security
     Mono.Posix
+    System.Core
+    System.Data
+    System.Data.DataSetExtensions
+    System.Runtime.Serialization
+    System.ServiceModel.Web
+    System.Web
+    System.Web.Extensions
+    System.Xml
+    System.Xml.Linq
 ])],
 [SHAMROCK_FIND_MONO_2_0_COMPILER
 SHAMROCK_CHECK_MONO_2_0_GAC_ASSEMBLIES([
@@ -154,6 +163,7 @@ data/Makefile
 data/icons/Makefile
 data/html/Makefile
 data/plugins/Makefile
+libs/Makefile
 SparkleLib/AssemblyInfo.cs
 SparkleLib/Defines.cs
 SparkleLib/Makefile

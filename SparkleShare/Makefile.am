@@ -5,7 +5,7 @@ SUBDIRS =	\
 ASSEMBLY = SparkleShare
 TARGET = exe
 
-LINK = $(REF_SPARKLESHARE) $(NOTIFY_SHARP_LIBS) $(WEBKIT_SHARP_LIBS)
+LINK = $(REF_SPARKLESHARE) $(NOTIFY_SHARP_LIBS) $(WEBKIT_SHARP_LIBS) -r:$(DIR_BIN)/GithubSharp.Core.dll -r:$(DIR_BIN)/GithubSharp.Plugins.AuthProviders.UserPasswordAuthProvider.dll -r:$(DIR_BIN)/GithubSharp.Plugins.CacheProviders.ApplicationCacher.dll -r:$(DIR_BIN)/GithubSharp.Plugins.LogProviders.SimpleLogProvider.dll
 
 if HAVE_APP_INDICATOR
 BUILD_DEFINES="-define:HAVE_APP_INDICATOR"
