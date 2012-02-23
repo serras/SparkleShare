@@ -145,7 +145,17 @@ namespace SparkleLib {
                 XmlNode email_node = SelectSingleNode ("/sparkleshare/user/email/text()");
                 string email = email_node.Value;
 
-                return new SparkleUser (name, email);
+                string pubkey_file_path = Path.Combine (
+                    Path.GetDirectoryName (FullPath),
+                    "sparkleshare." + email + ".key.pub"
+                );
+
+                SparkleUser user = new SparkleUser (name, email);
+                
+                if (File.Exists (pubkey_file_path))
+                    user.PublicKey = File.ReadAllText (pubkey_file_path);
+
+                return user;
             }
 
             set {
